@@ -1,0 +1,47 @@
+{
+  "build": {
+    "beforeDevCommand": "pnpm dev",
+    "beforeBuildCommand": "pnpm build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist",
+    "withGlobalTauri": false
+  },
+  "package": {
+    "productName": "pia-downloader",
+    "version": "0.0.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "http": {
+        "request": true,
+        "scope": ["https://*.aipiaxi.com/*"]
+      },
+      "shell": {
+        "open": true
+      }
+    },
+    "bundle": {
+      "active": true,
+      "icon": ["icons/icon.icns", "icons/icon.ico"],
+      "identifier": "wang.baran.pia-downloader",
+      "targets": "all"
+    },
+    "security": {
+      "csp": null
+    },
+    "updater": {
+      "active": false
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "resizable": true,
+        "title": "PIA Downloader",
+        "width": 360,
+        "height": 640,
+        "transparent": true
+      }
+    ],
+    "macOSPrivateApi": true
+  }
+}
